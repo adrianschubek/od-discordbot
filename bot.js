@@ -22,4 +22,9 @@ bot.on('message',message => {
          message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - You this cmd if you want to apply.\n**^^report** - Report a player.\n**^^website** - Open our website.');    
     }
 });
+
+bot.on('guildMemberAdd', member -> {
+    var role = member.guild.roles.find('name', 'Fans');
+}
+
 bot.login(process.env.BOT_TOKEN);
