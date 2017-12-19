@@ -31,7 +31,7 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('ready', () => {
     bot.user.setStatus('Online')
-    bot.user.setGame('say ^^help')
+    bot.user.setPresence({ game: { name: 'say ^^help', type: 0 } });
 });
 
 bot.login(process.env.BOT_TOKEN);
