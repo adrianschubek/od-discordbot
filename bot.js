@@ -12,6 +12,8 @@ bot.on('message',message => {
         message.channel.send('Play Open Driving here: http://roblox.com/games/726302522/Open-Driving');
     } else if (msg === prefix + 'APPLY') {			
         message.channel.send('Our roblox application centre is currently closed, if you want to apply then post your full application in #temp-applications');
+    } else if (msg === prefix + 'WHOAMI') {
+         message.channel.send('You are '+sender);   
     }
 });
 bot.login(process.env.BOT_TOKEN);
