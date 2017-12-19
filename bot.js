@@ -1,3 +1,4 @@
+//Open Driving Discord Bot - by welt101
 var Discord = require('discord.js');
 var bot = new Discord.Client();
 
