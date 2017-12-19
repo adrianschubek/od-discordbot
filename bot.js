@@ -7,7 +7,7 @@ bot.on('message',message => {
        var prefix = "<";
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
-    } else if (msg === prefix + 'PLAY) {
+    } else if (msg === prefix + 'PLAY') {
         message.channel.send('Play Open Driving here: http://roblox.com/games/726302522/Open-Driving');
     }
 });
