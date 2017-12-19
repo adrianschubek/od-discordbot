@@ -25,6 +25,7 @@ bot.on('message',message => {
 
 bot.on('guildMemberAdd', member -> {
     var role = member.guild.roles.find('name', 'Fans');
+    member.addRole(role);
 }
 
 bot.login(process.env.BOT_TOKEN);
