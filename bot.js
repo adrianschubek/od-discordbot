@@ -17,7 +17,7 @@ bot.on('message',message => {
     } else if (msg.includes("report")) {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
     } else if (msg === prefix + 'HELP') {
-         message.channel.send('I\'m a bot developed by @welt101');    
+         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - Do you want to apply? Then use this command.\n**^^report** - Report a player.');    
     }
 });
 bot.login(process.env.BOT_TOKEN);
