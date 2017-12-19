@@ -24,7 +24,7 @@ bot.on('message',message => {
 });
 
 bot.on('guildMemberAdd', member => {
-    console.log(member + ' >> joined');
+    console.log(member + ' >> joined')
     var role = member.guild.roles.find('name', 'Fans');
     member.addRole(role)
 });
