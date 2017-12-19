@@ -16,6 +16,8 @@ bot.on('message',message => {
          message.channel.send('You are '+sender);   
     } else if (msg.includes("report")) {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
+    } else if (msg === prefix + 'HELP') {
+         message.channel.send('I\'m a bot developed by @welt101');    
     }
 });
 bot.login(process.env.BOT_TOKEN);
