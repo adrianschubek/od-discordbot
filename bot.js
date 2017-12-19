@@ -14,7 +14,7 @@ bot.on('message',message => {
         message.channel.send(sender+' Our roblox application centre is currently closed, if you want to apply then post your full application in #temp-applications');
     } else if (msg === prefix + 'WHOAMI') {
          message.channel.send('You are '+sender);   
-    } else if (msg.includes("report")) {
+    } else if (msg.includes("REPORT")) {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
     } else if (msg === prefix + 'HELP') {
          message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - Do you want to apply? Then use this command.\n**^^report** - Report a player.');    
