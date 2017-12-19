@@ -16,8 +16,10 @@ bot.on('message',message => {
          message.channel.send('You are '+sender);   
     } else if (msg === prefix + 'REPORT') {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
+    } else if (msg === prefix + 'WEBSITE') {
+         message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - Do you want to apply? Then use this command.\n**^^report** - Report a player.');    
+         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - You this cmd if you want to apply.\n**^^report** - Report a player.');    
     }
 });
 bot.login(process.env.BOT_TOKEN);
