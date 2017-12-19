@@ -9,5 +9,5 @@ bot.on('message',message => {
         message.channel.send('Pong!')
     }
 });
-bot.login(process.env.MzkxNTQyMDIwMzIzNDA5OTIw.DRrFsQ.i8xMXF3PVVsAFQLTl9YKgMJxf0s);
+bot.login(process.env.BOT_TOKEN);
 //bot.login('MzkxNTQyMDIwMzIzNDA5OTIw.DRrFsQ.i8xMXF3PVVsAFQLTl9YKgMJxf0s');
