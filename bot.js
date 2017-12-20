@@ -13,7 +13,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'APPLY') {			
         message.channel.send(sender+' Our roblox application centre is currently closed, if you want to apply then post your full application in #temp-applications');
     } else if (msg === prefix + 'WHOAMI') {
-         message.channel.send('You are '+sender);   
+         message.channel.send('You are '+sender + ' ' + );   
     } else if (msg === prefix + 'REPORT') {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
     } else if (msg === prefix + 'WEBSITE') {
@@ -26,6 +26,18 @@ bot.on('message',message => {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg === prefix + 'STATS') {
         message.channel.send()
+    } else if (msg === prefix + 'announce') {
+        if (message.member.hasPermission("ADMINISTRATOR")) {
+            const text = args.join(" ")
+            if (text.length < 1) return message.channel.send("Unable announce nothing");
+            message.delete();
+            const embed = new Discord.RichEmbed()
+            .setColor(0x954D23)
+            .setTitle("Important Announcement:")
+            .setDescription(text);
+            message.channel.send("@everyone")
+            message.channel.send({embed})
+        }
     }
     
 
