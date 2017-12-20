@@ -18,8 +18,8 @@ bot.on('message',message => {
     } else if (msg === prefix + 'WEBSITE') {
          message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**/play** - Link to our main roblox game\n**/games** - List of our games\n**/whoami** - Who am I?\n**/apply** - Use this cmd if you want to apply.\n**/report** - Report a player.\n**/website** - Open our website.');    
-    } else if (msg === prefix + 'GAMES') {
+         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**/play** - Link to our main roblox game\n**/list** - List of our games\n**/whoami** - Who am I?\n**/apply** - Use this cmd if you want to apply.\n**/report** - Report a player.\n**/website** - Open our website.');    
+    } else if (msg === prefix + 'LIST') {
         message.channel.send('**--- LIST OF OUR GAMES ---**\nOpen Driving \(Main game\)**: http://bit.ly/opendriving\n**Open Driving: Palms Bay**: http://bit.ly/od-palmsbay');
     }
     
