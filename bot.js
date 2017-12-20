@@ -18,7 +18,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'WEBSITE') {
          message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**^^play** - Link to our roblox game\n**^^whoami** - Who am I?\n**^^apply** - Use this cmd if you want to apply.\n**^^report** - Report a player.\n**^^website** - Open our website.');    
+         message.channel.send('I\'m a bot developed by @welt101#5653. Available cmds:\n**/play** - Link to our roblox game\n**/whoami** - Who am I?\n**/apply** - Use this cmd if you want to apply.\n**/report** - Report a player.\n**/website** - Open our website.');    
     }
     
 });
@@ -31,7 +31,7 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('ready', () => {
     bot.user.setStatus('Online')
-    bot.user.setPresence({ game: { name: 'say ^^help', type: 0 } });
+    bot.user.setPresence({ game: { name: 'say /help', type: 0 } });
 });
 
 bot.login(process.env.BOT_TOKEN);
