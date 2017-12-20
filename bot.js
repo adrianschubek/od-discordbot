@@ -21,7 +21,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'HELP') {
          message.channel.send('I\'m a bot developed by **welt101#5653**. Available cmds:\n**+play** - Link to our main roblox game\n**+games** - List of our games\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.');    
     } else if ((msg === prefix + 'LIST')||(msg === prefix + 'GAMES')) {
-        message.channel.send('**--- LIST OF OUR GAMES ---\n**Open Driving** \(Main game\): http://bit.ly/opendriving \n**Open Driving: Palms Bay**: http://bit.ly/od-palmsbay');
+        message.channel.send('**--- LIST OF OUR GAMES ---**\n**Open Driving \(Main game\)**: http://bit.ly/opendriving \n**Open Driving: Palms Bay**: http://bit.ly/od-palmsbay');
     } else if (msg === prefix) {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     }
