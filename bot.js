@@ -24,6 +24,8 @@ bot.on('message',message => {
         message.channel.send('**--- LIST OF OUR GAMES ---**\n**Open Driving \(Main game\)**: http://bit.ly/opendriving \n**Open Driving: Palms Bay**: http://bit.ly/od-palmsbay');
     } else if (msg === prefix) {
         message.channel.send('*Invalid command! Use **+help** for help.*');
+    } else if (msg === prefix + 'STATS') {
+        message.channel.send()
     }
     
 
@@ -36,6 +38,7 @@ bot.on('guildMemberAdd', member => {
 });                                             
 
 bot.on('ready', () => {
+    console.log('OD-Bot: I\'m ready!')
     bot.user.setStatus('Online')
     bot.user.setPresence({ game: { name: 'say +help', type: 0 } });
 });
