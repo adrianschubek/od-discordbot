@@ -13,7 +13,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'APPLY') {			
         message.channel.send(sender+' Our roblox application centre is currently closed, if you want to apply then post your full application in #temp-applications');
     } else if (msg === prefix + 'WHOAMI') {
-         message.channel.send('You are '+sender + ' ' + );   
+         message.channel.send('You are '+sender + ' ');   
     } else if (msg === prefix + 'REPORT') {
          message.channel.send('Hi ' + sender + '! If you want to report someone, click here: http://opendriving.tk/feedback2/'); 
     } else if (msg === prefix + 'WEBSITE') {
