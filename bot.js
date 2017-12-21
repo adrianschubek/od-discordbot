@@ -26,7 +26,7 @@ bot.on('message',message => {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg === prefix + 'STATS') {
         message.channel.send()
-    } else if (msg === prefix + 'announce') {
+    } else if (msg === prefix + 'AMSG') {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             const text = args.join(" ")
             if (text.length < 1) return message.channel.send("Unable announce nothing");
