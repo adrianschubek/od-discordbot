@@ -30,6 +30,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'STATS') {
         message.channel.send()
     } else if (msg.startsWith(prefix + 'AMSG')) {
+        console.log("Announce ---->>> BEGIN");
         if (message.member.hasPermission("ADMINISTRATOR")) {
             const text = args.slice(1).join(" ");
             if (text.length < 1) return message.channel.send("Can not announce nothing");
@@ -38,8 +39,8 @@ bot.on('message',message => {
             .setColor(0x954D23)
             .setTitle("Important Announcement:")
             .setDescription(text);
-            message.channel.send("@everyone");
-            message.channel.send({embed});
+            message.channel.send("@everyone")
+            message.channel.send({embed})
         }
     }
     
