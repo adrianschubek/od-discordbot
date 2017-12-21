@@ -31,8 +31,8 @@ bot.on('message',message => {
         message.channel.send()
     } else if (msg.startsWith(prefix + 'AMSG')) {
         console.log("Announce ---->>> BEGIN");
-        if (message.member.hasPermission("ADMINISTRATOR")) {
-            const text = args.slice(1).join(" ");
+        //if (message.member.hasPermission("ADMINISTRATOR")) {
+            const text = args.join(" ")
             if (text.length < 1) return message.channel.send("Can not announce nothing");
             //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
@@ -41,7 +41,7 @@ bot.on('message',message => {
             .setDescription(text);
             message.channel.send("@everyone")
             message.channel.send({embed})
-        }
+       // }
     }
     
 
