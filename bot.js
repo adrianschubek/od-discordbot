@@ -29,17 +29,17 @@ bot.on('message',message => {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg === prefix + 'STATS') {
         message.channel.send()
-    } else if (msg === prefix + 'AMSG') {
+    } else if (msg.startsWith(prefix + 'AMSG')) {
         if (message.member.hasPermission("ADMINISTRATOR")) {
-            var text = message.split("|");
+            const text = args.slice(1).join(" ");
             if (text.length < 1) return message.channel.send("Can not announce nothing");
             //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
             .setColor(0x954D23)
             .setTitle("Important Announcement:")
             .setDescription(text);
-            message.channel.send("@everyone")
-            message.channel.send({embed})
+            message.channel.send("@everyone");
+            message.channel.send({embed});
         }
     }
     
