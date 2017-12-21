@@ -32,11 +32,12 @@ bot.on('message',message => {
     } else if (msg.startsWith(prefix + 'AMSG')) {
         console.log("Announce ---->>> BEGIN");
         //if (message.member.hasPermission("ADMINISTRATOR")) {
+            message.delete();
             const text = args.join(" ")
             if (text.length < 1) return message.channel.send("Can not announce nothing");
             //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
-            .setColor(0x954D23)
+            .setColor(0xFF0000)
             .setTitle("Important Announcement:")
             .setDescription(text);
             message.channel.send("@everyone")
