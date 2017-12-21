@@ -31,7 +31,7 @@ bot.on('message',message => {
         message.channel.send()
     } else if (msg === prefix + 'AMSG') {
         if (message.member.hasPermission("ADMINISTRATOR")) {
-            const text = args.slice(1).join(" ");
+            const text = args.split(" ");
             if (text.length < 1) return message.channel.send("Can not announce nothing");
             //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
