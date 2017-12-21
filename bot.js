@@ -6,6 +6,9 @@ bot.on('message',message => {
        var sender = message.author;
        var msg = message.content.toUpperCase();
        var prefix = "+";
+
+       let args = message.content.split(" ").slice(1);
+
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
     } else if (msg === prefix + 'PLAY') {
@@ -28,6 +31,8 @@ bot.on('message',message => {
         message.channel.send()
     } else if (msg === prefix + 'AMSG') {
         if (message.member.hasPermission("ADMINISTRATOR")) {
+            const text = args.join(" ")
+            if (text.length < 1) return message.channel.send("Unable announce nothing");
             message.delete();
             const embed = new Discord.RichEmbed()
             .setColor(0x954D23)
