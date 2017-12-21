@@ -27,7 +27,7 @@ bot.on('message',message => {
         message.channel.send('**--- LIST OF OUR GAMES ---**\n**Open Driving \(Main game\)**: http://bit.ly/opendriving \n**Open Driving: Palms Bay**: http://bit.ly/od-palmsbay');
     } else if (msg === prefix) {
         message.channel.send('*Invalid command! Use **+help** for help.*');
-    } else if (msg === prefix + 'WARN') {
+    } else if (msg.startsWith(prefix + 'WARN')) {
             message.delete();
             const text = args.join(" ")
             if (text.length < 1) return message.channel.send("Can not announce nothing");
