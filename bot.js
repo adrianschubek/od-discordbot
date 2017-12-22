@@ -7,7 +7,8 @@ bot.on('message',message => {
        var msg = message.content.toUpperCase();
        var prefix = "+";
 
-       let args = message.content.split(" ").slice(1);
+       let textargs = message.content.split(" ").slice(1);
+       let titleargs = message.content.split(" ").slice(2);
 
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
@@ -41,8 +42,8 @@ bot.on('message',message => {
         console.log("Announce ---->>> BEGIN");
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
-            const text = args.join(" ")
-            const title = args.slice(2).join(" ");
+            const text = textargs.join(" ")
+            const title = titleargs.join(" ");
             const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
             .setTitle(title)
