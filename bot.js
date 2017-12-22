@@ -36,18 +36,16 @@ bot.on('message',message => {
             .setColor(0xFF0000)
             .setTitle("Warning")
             .setDescription("Attention " + text + "! You have been warned! Please follow the rules #guidelines");
-            message.channel.send("@everyone")
             message.channel.send({embed})
     } else if (msg.startsWith(prefix + 'AMSG')) {
         console.log("Announce ---->>> BEGIN");
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
             const text = args.join(" ")
-            if (text.length < 1) return message.channel.send("Can not announce nothing");
-            //const colour = args.slice(2).join("");
-            const embed = new Discord.RichEmbed()
+            const title = args.slice(2).join("");
+            const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
-            .setTitle("Important Announcement")
+            .setTitle(title)
             .setDescription(text);
             message.channel.send("@everyone")
             message.channel.send({embed})
