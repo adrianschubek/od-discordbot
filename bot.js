@@ -42,7 +42,7 @@ bot.on('message',message => {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
             const text = args.join(" ")
-            const title = args.slice(2).join("");
+            const title = args.slice(2).join(" ");
             const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
             .setTitle(title)
