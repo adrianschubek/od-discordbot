@@ -7,9 +7,8 @@ bot.on('message',message => {
        var msg = message.content.toUpperCase();
        var prefix = "+";
 
-       let textargs = message.content.split(" ").slice(2);
-       let titleargs = message.content.split(" ").slice(1);
-
+       let textargs = message.content.split(" ").slice(1);
+     
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
     } else if (msg === prefix + 'PLAY') {
@@ -32,7 +31,6 @@ bot.on('message',message => {
             message.delete();
             const text = args.join(" ")
             if (text.length < 1) return message.channel.send("Can not announce nothing");
-            //const colour = args.slice(2).join("");
             const embed = new Discord.RichEmbed()
             .setColor(0xFF0000)
             .setTitle("Warning")
@@ -43,16 +41,18 @@ bot.on('message',message => {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
             const text = textargs.join(" ");
-            const title = titleargs.join(":");
             const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
-            .setTitle(title)
+            .setTitle("Important Announcement")
             .setDescription(text);
-            message.channel.send("@everyone")
             message.channel.send({embed})
         }
+    } else if (msg === prefix + 'EVERYONE') {
+        message.delete();
+        if (message.member.hasPermission("ADMINISTRATOR")) {
+            message.channel.send('@everyone');
+        }
     }
-    
 
 });
 
