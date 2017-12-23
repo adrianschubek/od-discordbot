@@ -29,8 +29,7 @@ bot.on('message',message => {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg.startsWith(prefix + 'WARN')) {
             message.delete();
-            const text = args.join(" ")
-            if (text.length < 1) return message.channel.send("Can not announce nothing");
+            const text = args.join(" ");
             const embed = new Discord.RichEmbed()
             .setColor(0xFF0000)
             .setTitle("Warning")
