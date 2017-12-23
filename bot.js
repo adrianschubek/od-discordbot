@@ -49,13 +49,21 @@ bot.on('message',message => {
         message.delete();
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.channel.send('@everyone');
-        }
+        } 
     } else if (msg === prefix + 'AFK') {
         message.delete();
         message.channel.send(sender + ' is now AFK :sleeping: .');
     } else if (msg === prefix + 'UNAFK') {
         message.delete();
         message.channel.send(sender + ' is no longer AFK :smile: .');
+    } else if (msg.startsWith(prefix + 'UPD')) {
+        message.delete();
+        const text = textargs.join(" ");
+        const embed = new Discord.RichEmbed()            
+        .setColor(0x0000FF)
+        .setTitle("Update")
+        .setDescription(text);
+        message.channel.send({embed})
     }
 
 });
