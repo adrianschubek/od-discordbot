@@ -51,6 +51,12 @@ bot.on('message',message => {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.channel.send('@everyone');
         }
+    } else if (msg === prefix + 'AFK') {
+        message.delete();
+        message.channel.send(sender + ' is now AFK :sleeping: .');
+    } else if (msg === prefix + 'UNAFK') {
+        message.delete();
+        message.channel.send(sender + ' is no longer AFK :smile: .');
     }
 
 });
