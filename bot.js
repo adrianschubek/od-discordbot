@@ -28,15 +28,14 @@ bot.on('message',message => {
     } else if (msg === prefix) {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg.startsWith(prefix + 'WARN')) {
-            message.delete();
-            const text = args.join(" ");
-            const embed = new Discord.RichEmbed()
-            .setColor(0xFF0000)
-            .setTitle("Warning")
-            .setDescription("Attention " + text + "! You have been warned! Please follow the rules #guidelines");
-            message.channel.send({embed})
+        message.delete();
+        const text = textargs.join(" ");
+        const embed = new Discord.RichEmbed()            
+        .setColor(0xFF0000)
+        .setTitle("[ WARNING ]")
+        .setDescription('You have been warned, ' + text + '! Please follow the **#guidelines**.');
+        message.channel.send({embed})
     } else if (msg.startsWith(prefix + 'AMSG')) {
-        console.log("Announce ---->>> BEGIN");
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
             const text = textargs.join(" ");
