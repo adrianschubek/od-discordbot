@@ -40,7 +40,7 @@ bot.on('message',message => {
             message.delete();
             const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
-            .setTitle("[ WARNING: " + textargs + " ]")
+            .setTitle("[ WARNING: " + textargs.slice(1) + " ]")
             .setDescription(cmdargs);
             message.channel.send({embed})
     } else if (msg.startsWith(prefix + 'AMSG')) {
