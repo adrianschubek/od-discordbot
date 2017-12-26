@@ -8,6 +8,7 @@ bot.on('message',message => {
        var prefix = "+";
 
        let textargs = message.content.split(" ").slice(1);
+       let cmdargs = message.content.split(" ").slice(2);
      
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
@@ -35,6 +36,13 @@ bot.on('message',message => {
         .setTitle("[ WARNING ]")
         .setDescription('You have been warned, ' + text + '! Please follow the **#guidelines**.');
         message.channel.send({embed})
+    } else if (msg.startsWith(prefix + 'WWARN')) {
+            message.delete();
+            const embed = new Discord.RichEmbed()            
+            .setColor(0xFF0000)
+            .setTitle("[ WARNING: " + textargs + " ]")
+            .setDescription(cmdargs);
+            message.channel.send({embed})
     } else if (msg.startsWith(prefix + 'AMSG')) {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.delete();
