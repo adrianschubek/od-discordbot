@@ -81,7 +81,7 @@ bot.on('message',message => {
         if(msg === prefix + 'USERINFO') {
             message.channel.send(userInfo(sender));
         }else{
-
+            message.channel.send(userInfo(textargs));
         }
     }    
 });
