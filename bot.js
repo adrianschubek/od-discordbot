@@ -4,7 +4,7 @@ var bot = new Discord.Client();
 
 function userInfo(user) {
     var uc = user.createdAt.toString().split(" ");
-   return "Userinfo --> **" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + ".";
+   return "**" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + "**.";
 }
 
 bot.on('message',message => {
@@ -81,6 +81,7 @@ bot.on('message',message => {
         if(msg === prefix + 'USERINFO') {
             message.channel.send(userInfo(sender));
         }else{
+            const otheruser = textargs.join("  ");
             message.channel.send(userInfo(textargs));
         }
     }    
