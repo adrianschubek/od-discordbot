@@ -3,8 +3,13 @@ var Discord = require('discord.js');
 var bot = new Discord.Client();
 
 function userInfo(user) {
+    try {
     var uc = user.createdAt.toString().split(" ");
-   return "**" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + "**.";
+    var str = "**" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + "**.";
+    return str;
+    }catch(err){
+        message.channel.send("**User *" + user + "* was not found on this server :/**");
+    }   
 }
 
 bot.on('message',message => {
