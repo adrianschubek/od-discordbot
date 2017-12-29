@@ -2,6 +2,11 @@
 var Discord = require('discord.js');
 var bot = new Discord.Client();
 
+function userInfo(user) {
+    var uc = user.createdAt.toString().split(" ");
+   return "Userinfo --> **" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + ".";
+}
+
 bot.on('message',message => {
        var sender = message.author;
        var msg = message.content.toUpperCase();
@@ -72,8 +77,13 @@ bot.on('message',message => {
         .setTitle("Update")
         .setDescription(text);
         message.channel.send({embed})
-    }
+    } else if (msg.startsWith(prefix + 'USERINFO')) {
+        if(msg === prefix + 'USERINFO') {
+            message.channel.send(userInfo(sender));
+        }else{
 
+        }
+    }    
 });
 
 bot.on('guildMemberAdd', member => {
