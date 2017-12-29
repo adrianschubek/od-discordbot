@@ -8,7 +8,7 @@ function userInfo(user) {
     var str = "**" + user.username + "** (ID: *" + user.id + "*) was created on **" + uc[1] + " " + uc[2] + ", " + uc[3] + "**.";
     return str;
     }catch(err){
-        return "**User *" + user + "* was not found on this server :/**";
+        return "**User *" + user + "* was not found on this server :(S**";
     }   
 }
 
