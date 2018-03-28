@@ -45,10 +45,10 @@ bot.on('message',message => {
        .setDescription('I\'m a bot developed by **welt101#5653**.\n\n [ Available commands ]\n\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+forum**/**+support** - Opens our support site\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n\n [ In-Game commands **WIP** ]\n\n**+money [USERNAME]** - Returns how much money the user has in-game ');
       
        message.channel.send({embed});   
-    } else if (msg === prefix + 'MONEY') {   
+    } else if (msg.startsWith(prefix + 'MONEY')) {   
         message.delete();
         const text = textargs.join(" ");
-        const _c = "couldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ ";
+        const _c = "\n\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ --> Server did not return exactly one value.";
         const embed = new Discord.RichEmbed()            
         .setColor(3447003)
         .setTitle("")
