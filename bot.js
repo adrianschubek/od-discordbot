@@ -1,7 +1,7 @@
 // OD Bot - by welt101 - opendriving.tk
 var Discord = require('discord.js');
 var bot = new Discord.Client();
-var version = "0.1.6b"
+var version = "0.1.6c"
 
 function userInfo(user) {
     try {
