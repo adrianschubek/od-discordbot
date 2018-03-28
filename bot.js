@@ -60,7 +60,7 @@ bot.on('message',message => {
     } else if (msg.startsWith(prefix + 'MONEY')) {   
         message.delete();
         const text = textargs.join(" ");
-        const _b = getMoney(message.author.username);
+        const _b = getMoney(message.author);
         const _c = "\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ \n\n--> Server did not return exactly one value.";
         const embed = new Discord.RichEmbed()            
         .setColor(3447003)
