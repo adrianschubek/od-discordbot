@@ -24,7 +24,7 @@ bot.on('message',message => {
     if (msg === prefix + 'PING') {
         message.channel.send('Pong!');
     } else if (msg === prefix + 'VERSION') {
-        message.channel.send('Currently running on version ' + version);
+        message.channel.send('[Debug] Currently running on version ' + version);
     } else if (msg === prefix + 'APPLY') {			
         message.channel.send(sender+' You may apply here: http://opendriving.tk/applynow');
     } else if (msg === prefix + 'WHOAMI') {
@@ -48,7 +48,7 @@ bot.on('message',message => {
     } else if (msg.startsWith(prefix + 'MONEY')) {   
         message.delete();
         const text = textargs.join(" ");
-        const _c = "\n\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ --> Server did not return exactly one value.";
+        const _c = "\n\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ \n\n--> Server did not return exactly one value.";
         const embed = new Discord.RichEmbed()            
         .setColor(3447003)
         .setTitle("")
