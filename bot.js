@@ -15,11 +15,13 @@ function userInfo(user) {
 
 function getMoney(user) {
     var map = {
-        "welt101#5653": "1,251,017",
-        "ThePolice007#7320": "281,102"
+        "welt101": "1,251,017",
+        "ThePolice007": "281,102"
     }
     if (map[user]) {
         return map[user]
+    }else if (user == '') {
+        return '*User not found!*'
     }else{
         return 500
     }
@@ -60,7 +62,7 @@ bot.on('message',message => {
     } else if (msg.startsWith(prefix + 'MONEY')) {   
         message.delete();
         const text = textargs.join(" ");
-        const _b = getMoney(message.author);
+        const _b = getMoney(text);
         const _c = "\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ \n\n--> Server did not return exactly one value.";
         const embed = new Discord.RichEmbed()            
         .setColor(3447003)
