@@ -13,6 +13,18 @@ function userInfo(user) {
     }   
 }
 
+function getMoney(user) {
+    var map = {
+        "welt101#5653": "1,251,017",
+        "ThePolice007#7320": "281,102"
+    }
+    if (map[user]) {
+        return map[user]
+    }else{
+        return 500
+    }
+}
+
 bot.on('message',message => {
        var sender = message.author;
        var msg = message.content.toUpperCase();
@@ -48,11 +60,12 @@ bot.on('message',message => {
     } else if (msg.startsWith(prefix + 'MONEY')) {   
         message.delete();
         const text = textargs.join(" ");
-        const _c = "\n\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ \n\n--> Server did not return exactly one value.";
+        const _b = getMoney(message.author.username);
+        const _c = "\nCouldn't fetch response stream.\n at root\\OpenDriving\\mainlogic\\int\\bot.js:219\n at GET opendriving.tk/db/API/?getMoney=" + text + "/ \n\n--> Server did not return exactly one value.";
         const embed = new Discord.RichEmbed()            
         .setColor(3447003)
         .setTitle("")
-        .setDescription('**' + text + '\'s** Cash in Open Driving: ' + _c);
+        .setDescription('**' + text + '\'s** Cash in Open Driving:\n  ' + _b);
         message.channel.send({embed})
     } else if ((msg === prefix + 'LIST')||(msg === prefix + 'GAMES')||(msg === prefix + 'PLAY')) {
         message.channel.send('A complete list of our games can be found here: http://opendriving.wikia.com/Games');
