@@ -39,11 +39,11 @@ bot.on('message',message => {
             message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
         message.delete();
-        const e = new Discord.RichEmbed()
+        const embed = new Discord.RichEmbed()
        .setColor(0x0000FF)
        .setTitle("Help for OD Bot")
        .setDescription('*I\'m a bot developed by **welt101#5653***.\n [ Available commands ]\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+forum**/**+support** - Opens our support site\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n [ In-Game commands **WIP** ]\n**+money [USERNAME]** - Returns the username\'s money');
-        message.channel.send({e});    
+        message.channel.send({embed});    
     } else if ((msg === prefix + 'LIST')||(msg === prefix + 'GAMES')||(msg === prefix + 'PLAY')) {
         message.channel.send('A complete list of our games can be found here: http://opendriving.wikia.com/Games');
     } else if (msg.startsWith(prefix + 'WARN')) {
@@ -55,7 +55,7 @@ bot.on('message',message => {
         .setDescription('You have been warned, ' + text + '! Please follow the **#guidelines**.');
         message.channel.send({embed})
     } else if (msg.startsWith(prefix + 'WWARN')) {
-            message.delete();
+            message.delete(); 
             const embed = new Discord.RichEmbed()            
             .setColor(0xFF0000)
             .setTitle("[ WARNING: " + textargs.slice(1) + " ]")
@@ -97,6 +97,36 @@ bot.on('message',message => {
             const otheruser = textargs.join("  ");
             message.channel.send(userInfo(textargs));
         }
+    } else if (msg === prefix + 'DEBUG1') {
+        message.channel.send({embed: {
+            color: 3447003,
+            author: {
+              name: client.user.username,
+              icon_url: client.user.avatarURL
+            },
+            title: "This is an embed",
+            url: "http://google.com",
+            description: "This is a test embed to showcase what they look like and what they can do.",
+            fields: [{
+                name: "Fields",
+                value: "They can have different fields with small headlines."
+              },
+              {
+                name: "Masked links",
+                value: "You can put [masked links](http://google.com) inside of rich embeds."
+              },
+              {
+                name: "Markdown",
+                value: "You can put all the *usual* **__Markdown__** inside of them."
+              }
+            ],
+            timestamp: new Date(),
+            footer: {
+              icon_url: client.user.avatarURL,
+              text: "© Example"
+            }
+          }
+        });
     } else if ((msg === prefix)||(msg.startsWith(prefix))) {
         message.channel.send('*Invalid command! Use **+help** for help.*');
     }
