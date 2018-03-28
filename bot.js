@@ -1,7 +1,7 @@
-// OD Bot v1.0.0
+// OD Bot - by welt101 - opendriving.tk
 var Discord = require('discord.js');
 var bot = new Discord.Client();
-var version = "0.1.4"
+var version = "0.1.5"
 
 function userInfo(user) {
     try {
@@ -26,7 +26,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'VERSION') {
         message.channel.send('Currently running on version ' + version);
     } else if (msg === prefix + 'APPLY') {			
-        message.channel.send(sender+' Our roblox application centre is currently closed, if you want to apply then post your full application in #temp-applications');
+        message.channel.send(sender+' You may apply here: http://opendriving.tk/applynow');
     } else if (msg === prefix + 'WHOAMI') {
          message.channel.send('You are '+sender + ' ');  
     } else if (msg === prefix + 'WIKI') {
@@ -36,7 +36,7 @@ bot.on('message',message => {
     } else if (msg === prefix + 'WEBSITE') {
          message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-         message.channel.send('I\'m a bot developed by **welt101#5653**. Available cmds:\n**+play** - Link to our main roblox game\n**+games** - List of our games\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.');    
+         message.channel.send('*I\'m a bot developed by **welt101#5653***.\n [ Available commands ]\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n [ In-game commands **WIP** ]\n**+money [USERNAME]');    
     } else if ((msg === prefix + 'LIST')||(msg === prefix + 'GAMES')||(msg === prefix + 'PLAY')) {
         message.channel.send('A complete list of our games can be found here: http://opendriving.wikia.com/Games');
     } else if ((msg === prefix)||(msg.startsWith(prefix))) {
