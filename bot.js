@@ -16,7 +16,8 @@ function userInfo(user) {
 function getMoney(user) {
     var map = {
         "welt101": "1,251,017",
-        "ThePolice007": "281,102"
+        "ThePolice007": "281,102",
+        "junior999log": "999,999,999"
     }
     if (map[user]) {
         return map[user]
