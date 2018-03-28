@@ -1,7 +1,7 @@
 // OD Bot - by welt101 - opendriving.tk
 var Discord = require('discord.js');
 var bot = new Discord.Client();
-var version = "0.1.6a"
+var version = "0.1.6b"
 
 function userInfo(user) {
     try {
@@ -38,14 +38,13 @@ bot.on('message',message => {
     } else if ((msg === prefix + 'FORUM')||(msg === prefix + "SUPPORT")) {
             message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-     const e = new Discord.RichEmbed()
-     .setColor('AQUA').setTitle("Help for OD Bot")
-     .setDescription('*I\'m a bot developed by **welt101#5653***.\n [ Available commands ]\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+forum**/**+support** - Opens our support site\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n [ In-Game commands **WIP** ]\n**+money [USERNAME]** - Returns the username\'s money');
+         const e = new Discord.RichEmbed()
+       .setColor('AQUA')
+       .setTitle("Help for OD Bot")
+       .setDescription('*I\'m a bot developed by **welt101#5653***.\n [ Available commands ]\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+forum**/**+support** - Opens our support site\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n [ In-Game commands **WIP** ]\n**+money [USERNAME]** - Returns the username\'s money');
         message.channel.send({e});    
     } else if ((msg === prefix + 'LIST')||(msg === prefix + 'GAMES')||(msg === prefix + 'PLAY')) {
         message.channel.send('A complete list of our games can be found here: http://opendriving.wikia.com/Games');
-    } else if ((msg === prefix)||(msg.startsWith(prefix))) {
-        message.channel.send('*Invalid command! Use **+help** for help.*');
     } else if (msg.startsWith(prefix + 'WARN')) {
         message.delete();
         const text = textargs.join(" ");
@@ -97,7 +96,9 @@ bot.on('message',message => {
             const otheruser = textargs.join("  ");
             message.channel.send(userInfo(textargs));
         }
-    }    
+    } else if ((msg === prefix)||(msg.startsWith(prefix))) {
+        message.channel.send('*Invalid command! Use **+help** for help.*');
+    }
 });
 
 bot.on('guildMemberAdd', member => {
