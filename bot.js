@@ -38,7 +38,8 @@ bot.on('message',message => {
     } else if ((msg === prefix + 'FORUM')||(msg === prefix + "SUPPORT")) {
             message.channel.send(sender + ' Our website -> http://www.opendriving.tk');    
     } else if (msg === prefix + 'HELP') {
-         const e = new Discord.RichEmbed()
+        message.delete();
+        const e = new Discord.RichEmbed()
        .setColor('AQUA')
        .setTitle("Help for OD Bot")
        .setDescription('*I\'m a bot developed by **welt101#5653***.\n [ Available commands ]\n**+play**/**+games** - Shows a list of our games\n**+wiki** - Opens our wiki\n**+forum**/**+support** - Opens our support site\n**+whoami** - Who am I?\n**+apply** - Use this cmd if you want to apply.\n**+report** - Report a player.\n**+website** - Open our website.\n**+afk** - Change your status to *afk*.\n**+unafk** - Change your status back to normal.\n**+userinfo** - Information about you.\n [ In-Game commands **WIP** ]\n**+money [USERNAME]** - Returns the username\'s money');
